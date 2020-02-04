@@ -1,3 +1,17 @@
+<html>
+
+    <head>
+
+    <title>POSHAN ABHIYAAN</title>
+
+</head>
+<body style="background-color:powderblue;">
+  
+  <h1>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;Records</h1>
+ <p></p>
+ <br>
+ <p></p>
+ <h2> NAME  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;USERNAME &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;PASSWORD</h2>
 <?php
 
 
@@ -24,8 +38,6 @@ $username = mysqli_real_escape_string($link, $_REQUEST["uname"]);
 
 $sql = "SELECT username,password,name FROM mukhya WHERE district='".$username."' ";
 
-echo "<br>Name:    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;    Username:&emsp;&emsp;  &emsp; &emsp;&emsp;       Password:<br>";
-
 $result = $conn->query($sql);
 
 
@@ -36,7 +48,7 @@ if ($result->num_rows > 0) {
 
   while($row = $result->fetch_assoc()) {
 
-    echo "<br>". $row["name"]." &emsp;&emsp;         ". $row["username"]. "  &emsp;&emsp;        " . $row["password"] . "<br>";
+    echo "<br>". $row["name"]." &emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;        &emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;   ". $row["username"]. "   &emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;        " . $row["password"] . "<br>";
 
   }
 
@@ -58,3 +70,5 @@ $conn->close();
 mysqli_close($link);
 
 ?>
+</body>
+</html>

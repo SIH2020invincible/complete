@@ -27,7 +27,7 @@ $name=filter_input(INPUT_POST,'nm');
 
         else{
 
-            $sql="INSERT INTO user (username, name,address,contact) values('$username','$password','$district','$name')";
+            $sql="INSERT INTO user (username, name,address,contact,attendance) values('$username','$password','$district','$name','a')";
 
             if($conn->query($sql)){
 

@@ -5,23 +5,20 @@ $password = "";
 $dbname = "sih";
 
 // Create connection
-$link = mysqli_connect("localhost", "root", "", "sih");
 $conn = new mysqli($servername, $username, $password, $dbname);
-//$link = mysqli_connect("localhost", "root", "", "sih");
-//$username = mysqli_real_escape_string($link, $_REQUEST["uname"]);
+$link = mysqli_connect("localhost", "root", "", "sih");
+
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-$username=mysqli_real_escape_string($link, $_REQUEST["uname"]);
-
-// sql to delete a record
-$sql = "DELETE FROM mukhya WHERE username='".$username."'";
+$id = mysqli_real_escape_string($link, $_REQUEST["uname"]);
+$sql = "UPDATE user SET attendance='a' WHERE username='".$id."'";
 
 if ($conn->query($sql) === TRUE) {
-    $a= "Record deleted successfully";
+    $a= "Alerts Sent";
 } else {
-    $a= "Error deleting record: ";
+    $a= "Error not found";
 }
 
 $conn->close();
@@ -226,7 +223,7 @@ border: 1px solid #ccc;
 
 <div class="topnav">
 
-<a class="active" href="cdpo.html">Back</a>
+<a class="active" href="anganwadi.html">Back</a>
 
 
 

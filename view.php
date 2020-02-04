@@ -1,3 +1,17 @@
+<html>
+
+    <head>
+
+    <title>POSHAN ABHIYAAN</title>
+
+</head>
+<body style="background-color:powderblue;">
+  
+  <h1>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;Records</h1>
+ <p></p>
+ <br>
+ <p></p>
+ <h2> NAME  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;Contact Number &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;ADDRESS</h2>
 <?php
 
 
@@ -24,7 +38,7 @@ $username = mysqli_real_escape_string($link, $_REQUEST["uname"]);
 
 $sql = "SELECT name,address,contact FROM user WHERE username='".$username."' ";
 
-echo "<br>Name:    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;    Address:&emsp;&emsp;  &emsp; &emsp;&emsp;       Contact Number:<br>";
+
 
 $result = $conn->query($sql);
 
@@ -36,7 +50,7 @@ if ($result->num_rows > 0) {
 
   while($row = $result->fetch_assoc()) {
 
-    echo "<br>". $row["name"]." &emsp;&emsp;         ". $row["address"]. "  &emsp;&emsp;        " . $row["contact"] . "<br>";
+    echo "<br>". $row["name"]." &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;     ". $row["contact"]. "  &emsp;&emsp;&emsp;&emsp;&emsp;    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;    " . $row["address"] . "<br>";
 
   }
 
@@ -58,3 +72,5 @@ $conn->close();
 mysqli_close($link);
 
 ?>
+</body>
+</html>
